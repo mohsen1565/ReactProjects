@@ -5,11 +5,12 @@
   "main": "index.js",
   "homepage": "https://github.com/mohsen1565/ReactProjects.git",
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",  	
     "start": "npm run build",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack -d && cp src/index.html dist/index.html && webpack-dev-server --content-base src/ --inline",
-    "build:prod": "cp src/index.html dist/index.html && webpack -p",
-    "deploy": "npm run build&&gh-pages -d build"
+    "build:prod": "cp src/index.html dist/index.html && webpack -p"
   },
   "keywords": [
     "react"
@@ -17,6 +18,7 @@
   "author": "Maximilian Schwarzmueller",
   "license": "MIT",
   "dependencies": {
+    "gh-pages": "^1.0.0",
     "react": "^15.1.0",
     "react-dom": "^15.1.0"
   },
